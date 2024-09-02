@@ -28,3 +28,256 @@
 </main>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<main>
+	<div class="catalogue-main1">
+		<div class="column static" id="static"></div>
+		ЗДЕСЬ БУДЕТ ВЫВОДИТЬСЯ PHP-КОД
+	</div>
+</main>
+</body>
+</html>
+
+
+
+
+
+div class="catalogue-main1">
+				<div class="column_static" id="static">
+					<h2>китайская кухня</h2>
+					<div class="filter">
+						<div class="checkbox" data-index="1">
+							<input
+								type="checkbox"
+								id="check1"
+								name="category"
+								class="check" />
+							<label for="check1" class="label">
+								<span>СЕТЫ</span>
+							</label>
+						</div>
+
+						<div class="checkbox" data-index="2">
+							<input
+								type="checkbox"
+								id="check2"
+								name="category"
+								class="check" />
+								<span>ГОРЯЧЕЕ</span>
+							</label>
+						</div>
+
+						<div class="checkbox" data-index="3">
+							<input
+								type="checkbox"
+								id="check3"
+								name="category"
+								class="check" />
+							<label for="check3" class="label">
+								<span>САЛАТЫ</span>
+							</label>
+						</div>
+
+						<div class="checkbox" data-index="4">
+							<input
+								type="checkbox"
+								id="check4"
+								name="category"
+								class="check" />
+							<label for="check4" class="label">
+								<span>МОРЕПРОДУКТЫ</span>
+							</label>
+						</div>
+
+						<div class="checkbox" data-index="5">
+							<input
+								type="checkbox"
+								id="check5"
+								name="category"
+								class="check" />
+							<label for="check5" class="label">
+								<span>ГАРНИРЫ</span>
+							</label>
+						</div>
+
+						<div class="checkbox" data-index="6">
+							<input
+								type="checkbox"
+								id="check6"
+								name="category"
+								class="check" />
+							<label for="check6" class="label">
+								<span>БИЗНЕС-ЛАНЧИ</span>
+							</label>
+						</div>
+					</div>
+
+					<h2>ПРОЧЕЕ</h2>
+
+					<div class="filter">
+						<div class="checkbox" data-index="7">
+							<input
+								type="checkbox"
+								id="check7"
+								name="category"
+								class="check" />
+							<label for="check7" class="label">
+								<span>ПИРОГИ</span>
+							</label>
+						</div>
+
+						<div class="checkbox" data-index="8">
+							<input
+								type="checkbox"
+								id="check8"
+								name="category"
+								class="check" />
+							<label for="check8" class="label">
+								<span>ГРИЛЬ</span>
+							</label>
+						</div>
+
+						<div class="checkbox" data-index="9">
+							<input
+								type="checkbox"
+								id="check9"
+								name="category"
+								class="check" />
+							<label for="check9" class="label">
+								<span>ДЛЯ ДЕТЕЙ</span>
+							</label>
+						</div>
+
+						<div class="checkbox" data-index="10">
+							<input
+								type="checkbox"
+								id="check10"
+								name="category"
+								class="check" />
+							<label for="check10" class="label">
+								<span>НАПИТКИ</span>
+							</label>
+						</div>
+					</div>
+				</div>
+				  <?php
+        include 'db.php'; // Подключаемся к базе данных
+
+        $sql = "SELECT name, category, price, weight, description, image_url FROM dish";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // Для каждой записи создаем новый блок с классом 'column'
+            while($row = $result->fetch_assoc()) {
+                echo "<div class='column'>";
+                echo "<div class='content'>";
+                echo "<div class='image' id='imagef' style='background-image: url(" . $row['image_url'] . ");'></div>";
+                echo "<p id='name'>" . $row['name'] . "</p>";
+                echo "<h3 id='weight'>" . $row['weight'] . " гр</h3>";
+                echo "<h3 id='decribe'>" . $row['description'] . "</h3>";
+                echo "<div class='column_buy'>";
+                echo "<h4 id='coast'>" . $row['price'] . " ₽</h4>";
+                echo "<button id='basket' class='btn'>";
+                echo "<img id='normalbasker' src='./img/buy.svg' alt='Купить' />";
+                echo "</button>";
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
+            }
+        } else {
+            echo "<p>Нет доступных данных</p>";
+        }
+
+        $conn->close(); // Закрываем соединение с базой данных
+        ?>
+			</div>
+		</main>
+
+		  <?php
+        include 'db.php'; // Подключаемся к базе данных
+
+        $sql = "SELECT name, category, price, weight, description, image_url FROM dish";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // Для каждой записи создаем новый блок с классом 'column'
+            while($row = $result->fetch_assoc()) {
+                echo "<div class='column'>";
+                echo "<div class='content'>";
+                echo "<div class='image' id='imagef' style='background-image: url(" . $row['image_url'] . ");'></div>";
+                echo "<p id='name'>" . $row['name'] . "</p>";
+                echo "<h3 id='weight'>" . $row['weight'] . " гр</h3>";
+                echo "<h3 id='decribe'>" . $row['description'] . "</h3>";
+                echo "<div class='column_buy'>";
+                echo "<h4 id='coast'>" . $row['price'] . " ₽</h4>";
+                echo "<button id='basket' class='btn'>";
+                echo "<img id='normalbasker' src='./img/buy.svg' alt='Купить' />";
+                echo "</button>";
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
+            }
+        } else {
+            echo "<p>Нет доступных данных</p>";
+        }
+
+        $conn->close(); // Закрываем соединение с базой данных
+        ?>
+
+INSERT INTO `dish` (`id_dish`, `name`, `category`, `price`, `weight`, `description`, `image_url`) 
+VALUES 
+(1, 'Сет "Харбин"', 'set', 6070, 5, 'Мясо веревочкой,<br />Гобаожоу<br />Жаренные баклажаны<br />Китайский салат<br />Картофель-фри<br />Рис с яйцом<br />Пампушки 2шт.', './img/sets/harbin.png'),
+(2, 'Сет "Пекин"', 'set', 6070, 5, 'Мясо веревочкой 2шт.<br />Гобаожоу<br />Хрустящие крылышки<br />Мясное жаркое с картофелем<br />Китайский салат<br />Салат из сельдерея с кешью<br />Пикантный салат из древесных грибов<br />Рис с овощами 2шт.<br />Пампушки 6шт.', './img/sets/pekin.png'),
+(3, 'Сет "Далянь"', 'set', 4050, 3, 'Хрустящие крылышки<br />Свинина с креветками в пивном соусе<br />Баклажаны с картофелем<br />Крахмальная лапша с мясом<br />Салат из языка', './img/sets/dalan.png'),
+(4, 'Сет "Шанхай"', 'set', 6070, 5, 'Гобаожоу<br />Говядина на доске<br />Свинина с креветками в пивном соусе<br />Бастурма<br />Жареные баклажаны<br />Китайский салат<br />Мясо-овощной салат<br />Рис с яйцом 2шт.', './img/sets/shanhai.png'),
+(5, 'Сет "Циндао"', 'set', 2530, 2, 'Кусочки свинины с перцем<br />Свинина с побегами чеснока<br />Крахмальная лапша с мясом<br />Картофель жареный в сметане<br />Пампушки 2шт.', './img/sets/cindao.png');
+
+
+INSERT INTO `dish` (`id_dish`, `name`, `category`, `price`, `weight`, `description`, `image_url`) 
+VALUES 
+(1, 'Сет "Харбин"', 'set', 6070, 5, 'Мясо веревочкой,<br />Гобаожоу<br />Жаренные баклажаны<br />Китайский салат<br />Картофель-фри<br />Рис с яйцом<br />Пампушки 2шт.', './img/sets/harbin.png'),
+(2, 'Сет "Пекин"', 'set', 6070, 5, 'Мясо веревочкой 2шт.<br />Гобаожоу<br />Хрустящие крылышки<br />Мясное жаркое с картофелем<br />Китайский салат<br />Салат из сельдерея с кешью<br />Пикантный салат из древесных грибов<br />Рис с овощами 2шт.<br />Пампушки 6шт.', './img/sets/pekin.png'),
+(3, 'Сет "Далянь"', 'set', 4050, 3, 'Хрустящие крылышки<br />Свинина с креветками в пивном соусе<br />Баклажаны с картофелем<br />Крахмальная лапша с мясом<br />Салат из языка', './img/sets/dalan.png'),
+(4, 'Сет "Шанхай"', 'set', 6070, 5, 'Гобаожоу<br />Говядина на доске<br />Свинина с креветками в пивном соусе<br />Бастурма<br />Жареные баклажаны<br />Китайский салат<br />Мясо-овощной салат<br />Рис с яйцом 2шт.', './img/sets/shanhai.png'),
+(5, 'Сет "Циндао"', 'set', 2530, 2, 'Кусочки свинины с перцем<br />Свинина с побегами чеснока<br />Крахмальная лапша с мясом<br />Картофель жареный в сметане<br />Пампушки 2шт.', './img/sets/cindao.png');
+(6, 'Гобаожоу', 'hot', 810, 500, 'Свинина, морковь, сладкий перец, лук, крахмал', './img/hot/gobaorou.png'),
+(7, 'Жареные баклажаны', 'hot', 760, 500, 'Баклажан, свинина, морковь, перец, лук, соус', './img/hot/baklan.png'),
+(8, 'Крахмальная лапша', 'hot', 540, 600, 'Крахмальная лапша, свинина, лук, соус', './img/hot/lapsha.png'),
+(9, 'Свинина в пивном соусе', 'hot', 660, 500, 'Свинина, грибы, лук, морковь, зелень', './img/hot/pig.png'),
+(10, 'Хрустящие крылышки', 'hot', 780, 500, 'Крылья куриные, соус', './img/hot/chiken.png'),
+(11, 'Пряные кусочки курицы в соусе', 'hot', 950, 400, 'Куриное филе, лук, морковь, огурец, арахис', './img/hot/chiken.png'),
+(12, 'Мясо веревочкой', 'hot', 370, 700, 'Свинина, креветки, сладкий перец, морковь, лук, соус', './img/hot/verevochka.png'),
+(13, 'Бастурма', 'hot', 470, 300, 'Свинина, лук, перец молотый, пряности', './img/hot/basturma.png'),
+(14, 'Китайский салат', 'salad', 440, 450, 'Свинина, огурец, капуста, морковь, древесные грибы, фунчоза, соус', './img/salad/chinese.png'),
+(15, 'Рулька с огурцом и соусом', 'salad', 670, 450, 'Рулька, огурец, лук, зелень, соус', './img/salad/rulka.png'),
+(16, 'Cалат из папоротника', 'salad', 570, 450, 'Папоротник, лук, арахис, морковь, острый перец, соус', './img/salad/pap.png'),
+(17, 'Cалат c брокколи', 'salad', 670, 450, 'Брокколи, зелень, морковь', './img/salad/mayo.png'),
+(18, 'Cалат с картошкой', 'salad', 430, 450, 'Картошка, салат, папоротник', './img/salad/potatosalad.png'),
+(19, 'Хрустящие кольца кальмара', 'seafood', 820, 400, 'Кальмар, кляр', './img/seafood/calmar.png'),
+(20, 'Жареные кольца кальмара', 'seafood', 1010, 400, 'Кальмар, лук, специи', './img/seafood/calmar2.png'),
+(21, 'Очищенные креветки с сельдереем', 'seafood', 1220, 450, 'Креветки, сельдерей, сладкий перец', './img/seafood/selder.png'),
+(22, 'Хрустящая рыбка', 'set', 670, 450, 'Мойва, крахмал, специи', './img/seafood/fish.png'),
+(23, 'Картофель-фри', 'add', 370, 400, 'Картофель, соль', './img/add/fri.png'),
+(24, 'Рис с овощами', 'add', 250, 320, 'Рис, овощи, курица', './img/add/rice.png'),
+(25, 'Рис с яйцом', 'add', 250, 300, 'Рис, яйцо', './img/add/rice1.png'),
+(26, 'Рис', 'add', 80, 230, 'Рис', './img/add/rice2.png'),
+(27, 'Пампушка', 'add', 20, 70, 'Вода, мука', './img/add/pampum.png'),
+(28, 'Китайский бизнес-ланч №1 (5 порций)', 'lunch', 2300, 2500, 'Китайский салат<br />Рис<br />Мясл веревочкой<br />Пампушка', './img/lunch/lunch1.png'),
+(29, 'Китайский бизнес-ланч №2 (5 порций)', 'lunch', 2300, 2500, 'Свинина с побегами чеснока<br />Крахмальная лапша с мясом<br />Пампушка', './img/lunch/lunch2.png'),
+(30, 'Китайский бизнес-ланч №3 (5 порций)', 'lunch', 2300, 2500, 'Кусочки свинины с перцем<br />Китайский салат<br />Рис<br />Мясл веревочкой<br />Пампушка', './img/lunch/lunch3.png'),
+(31, 'Пирог с курицей и сыром 25 см', 'pie', 460, 600, 'Куриное филе, сулугуни, моцарелла, картофель, лук репчатый, молотый черный перец', './img/pie/pie1.png'),
+(32, 'Пирог осетинский с говядиной 25 см', 'pie', 610, 550, 'Говяжья вырезка, лук репчатый, картофель, молотый черный перец', './img/pie/pie2.png'),
+(33, 'Шашлык из курицы', 'grill', 320, 100, 'Сочные кусочки курицы со специями, приготовленные на огне', './img/grill/meat.png'),
+(34, 'Шашлык из свинины', 'grill', 300, 100, 'Сочные кусочки свинины со специями, приготовленные на огне', './img/grill/meat1.png'),
+(35, 'Супчик детский', 'kids', 220, 250, 'Аппетитный супчик с курочкой, вермишелью и овощами', './img/kids/soup.png'),
+(36, 'Солнышко', 'kids', 250, 200, 'Нежная котлетка из курочки и свинины с картофелем фри', './img/kids/sun.png'),
+(37, 'Сок 1 литр', 'drink', 280, 1000, 'Сок бренда "Rich"', './img/drink/juice.png'),
+(38, 'Coca-cola 1 литр', 'drink', 200, 1000, 'Газированный напиток Добрый Кола', './img/drink/cola.png');

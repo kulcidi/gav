@@ -70,19 +70,19 @@ function navigateTo(url) {
 
 // Привязка событий к элементам в header1
 document.getElementById('menu-link').addEventListener('click', function () {
-	navigateTo('menu.html') // Укажите правильный путь к странице
+	navigateTo('menu.php') // Укажите правильный путь к странице
 })
 
 document.getElementById('lunch-link').addEventListener('click', function () {
-	navigateTo('lunch.html') // Укажите правильный путь к странице
+	navigateTo('lunch.php') // Укажите правильный путь к странице
 })
 
 document.getElementById('delivery-link').addEventListener('click', function () {
-	navigateTo('delivery.html') // Укажите правильный путь к странице
+	navigateTo('delivery.php') // Укажите правильный путь к странице
 })
 
 document.getElementById('reviews-link').addEventListener('click', function () {
-	navigateTo('reviews.html') // Укажите правильный путь к странице
+	navigateTo('reviews.php') // Укажите правильный путь к странице
 })
 
 // Привязка событий ко всем элементам <h2> в aside
@@ -100,26 +100,26 @@ function navigateTo(url) {
 
 // Переход по клику на логотип
 document.getElementById('logo-small').addEventListener('click', function () {
-	navigateTo('index.html') // Переход на главную страницу
+	navigateTo('index.php') // Переход на главную страницу
 })
 
 // Переход по клику на логотип
 document.getElementById('logo-big').addEventListener('click', function () {
-	navigateTo('index.html') // Переход на главную страницу
+	navigateTo('index.php') // Переход на главную страницу
 })
 
 // Переход по клику на иконку корзины
 document.getElementById('basket-icon2').addEventListener('click', function () {
-	navigateTo('basket.html') // Переход на страницу корзины
+	navigateTo('basket.php') // Переход на страницу корзины
 })
 
 // Переход по клику на иконку корзины
 document.getElementById('basket-icon1').addEventListener('click', function () {
-	navigateTo('basket.html') // Переход на страницу корзины
+	navigateTo('basket.php') // Переход на страницу корзины
 })
 // Переход по клику на иконку корзины
 document.getElementById('profile-icon1').addEventListener('click', function () {
-	navigateTo('profile.html') // Переход на страницу корзины
+	navigateTo('profile.php') // Переход на страницу корзины
 })
 
 document

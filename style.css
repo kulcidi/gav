@@ -415,7 +415,9 @@ footer main .column {
 		background: url(./img/sets/harbin.png);
 		background-size: cover;
 	}
-
+.btn{
+	background-color: #9b9b9b;
+}
 	#image2 {
 		border-radius: 15px;
 		width: 100%;

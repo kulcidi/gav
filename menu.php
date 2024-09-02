@@ -69,7 +69,7 @@
 				<button id="filterrButton"><h2>КАТЕГОРИЯ</h2></button>
 			</div>
 			<div class="catalogue-main1">
-				<div class="column static" id="static">
+				<div class="column_static" id="static">
 					<h2>китайская кухня</h2>
 					<div class="filter">
 						<div class="checkbox" data-index="1">
@@ -417,20 +417,36 @@
 						</div>
 					</div>
 				</div>
-				<div class="column">
-					<div class="content">
-						<div class="image" id="imagef"></div>
-						<p id="name"></p>
-						<h3 id="weight"></h3>
-						<h3 id="decribe"></h3>
-						<div class="column_buy">
-							<h4 id="coast"></h4>
-							<button id="basket" class="btn">
-								<img id="normalbasker" src="./img/buy.svg" alt="" />
-							</button>
-						</div>
-					</div>
-				</div>
+				  <?php
+        include 'db.php'; // Подключаемся к базе данных
+
+        $sql = "SELECT name, category, price, weight, description, image_url FROM dish";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // Для каждой записи создаем новый блок с классом 'column'
+            while($row = $result->fetch_assoc()) {
+                echo "<div class='column'>";
+                echo "<div class='content'>";
+                echo "<div class='image' id='imagef' style='background-image: url(" . $row['image_url'] . ");'></div>";
+                echo "<p id='name'>" . $row['name'] . "</p>";
+                echo "<h3 id='weight'>" . $row['weight'] . " гр</h3>";
+                echo "<h3 id='decribe'>" . $row['description'] . "</h3>";
+                echo "<div class='column_buy'>";
+                echo "<h4 id='coast'>" . $row['price'] . " ₽</h4>";
+                echo "<button id='basket' class='btn'>";
+                echo "<img id='normalbasker' src='./img/buy.svg' alt='Купить' />";
+                echo "</button>";
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
+            }
+        } else {
+            echo "<p>Нет доступных данных</p>";
+        }
+
+        $conn->close(); // Закрываем соединение с базой данных
+        ?>
 			</div>
 		</main>
 		<footer>
@@ -488,4 +504,5 @@
 		})
 	</script>
 	<script src="./script.js"></script>
+	<script scr="./filter.js"></script>
 </html>

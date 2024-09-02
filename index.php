@@ -57,7 +57,7 @@
 
 			<aside id="filterrSidebar" class="filterr"></aside>
 			<div id="shorter" id="left">
-				<h1>НАСТОЯЩИЙ <br />КИТАЙСКИЙ РЕСТОРАН</h1>
+				<h1>НАСТОЯЩАЯ <br />КИТАЙСКАЯ КУХНЯ</h1>
 			</div>
 		</main>
 		<section id="splide" class="splide" aria-label="Splide Basic HTML Example">
@@ -148,7 +148,7 @@
 					<div class="content">
 						<div class="image" id="image2"></div>
 						<p id="name">Сет "Далянь"</p>
-						<h3 id="weight">Вес:2,6кг</h3>
+						<h3 id="weight">Вес:3кг</h3>
 						<h3 id="decribe">
 							Хрустящие крылышки<br />
 							Свинина с креветками в пивном соусе<br />
@@ -191,7 +191,7 @@
 					<div class="content">
 						<div class="image" id="image5"></div>
 						<p id="name">Сет "Циндао"</p>
-						<h3 id="weight">Вес: 1,8кг</h3>
+						<h3 id="weight">Вес: 2кг</h3>
 						<h3 id="decribe">
 							Кусочки свинины с перцем<br />
 							Свинина с побегами чеснока<br />
