@@ -27,46 +27,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Жемчужина Востока</title>
-		<link rel="shortcut icon" href="./img/tab.ico" />
-		<link rel="stylesheet" href="./style.css" />
-		<link rel="stylesheet" href="./style1.css" />
-	</head>
-	<body>
-		<main>
-			<img id="background" src="./img/texture.png" />
-			<section class="window">
-				<h1>ВОЙТИ</h1>
-                <div class="offer">
-                    <h2>Впервые на сайте?</h2>
-                    <a id="sus" href="register.php"><h2 >Зарегистрироваться</h2> </a>
-                </div>
-                
-				<form method="POST" action="login.php">
-					<input
-						type="text"
-						name="phone"
-						placeholder="Телефон"
-						required /><br />
-					<input
-						type="password"
-						name="password"
-						placeholder="Пароль"
-						required /><br />
-				</form>
-				<button type="submit" id="logout1"><h2>ВОЙТИ</h2></button>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Жемчужина Востока</title>
+    <link rel="shortcut icon" href="./img/tab.ico" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style1.css" />
+</head>
+<body>
+    <main>
+        <img id="background" src="./img/texture.png" />
+        <section class="window">
+            <h1>ВОЙТИ</h1>
 
-				<button id="logout">
-					<a href="index.php"><h2>На главную</h2></a>
-				</button>
-			</section>
-		</main>
-	</body>
-	<script src="./script.js"></script>
+            <?php if (!empty($error_message)): ?>
+                <p style="color: red;"><?php echo $error_message; ?></p>
+            <?php endif; ?>
+
+            <div class="offer">
+                <h2>Впервые на сайте?</h2>
+                <a id="sus" href="register.php"><h2>Зарегистрироваться</h2></a>
+            </div>
+            
+            <form method="POST" action="login.php">
+                <input type="text" name="phone" placeholder="Телефон" required /><br />
+                <input type="password" name="password" placeholder="Пароль" required /><br />
+                <button type="submit" id="logout1"><h2>ВОЙТИ</h2></button>
+            </form>
+
+            <button id="logout">
+                <a href="index.php"><h2>На главную</h2></a>
+            </button>
+        </section>
+    </main>
+</body>
+<script src="./script.js"></script>
 </html>
