@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -33,7 +37,11 @@
 					</nav>
 					<nav id="header1-nav2">
 						<button>
-							<img id="profile-icon1" src="./svg/profile.svg" alt="Profile" />
+							<?php if (isset($_SESSION['user_id'])): ?>
+        <a href="profile.php"><img id="profile-icon1" src="./svg/profile.svg" alt="Profile" /></a>
+    <?php else: ?>
+        <a href="login.php"><img id="profile-icon1" src="./svg/profile.svg" alt="Profile" /></a>
+    <?php endif; ?>
 						</button>
 					</nav>
 				</div>
