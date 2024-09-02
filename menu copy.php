@@ -68,8 +68,8 @@
 			<div class="buka">
 				<button id="filterrButton"><h2>КАТЕГОРИЯ</h2></button>
 			</div>
-			<div class="catalogue">
-				<div class="right" id="side">
+			<div class="catalogue-main1">
+				<div class="column_static" id="static">
 					<h2>китайская кухня</h2>
 					<div class="filter">
 						<div class="checkbox" data-index="1">
@@ -417,9 +417,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="left">
-					 <?php
-        <!-- include 'db.php'; // Подключаемся к базе данных
+				  <?php
+        include 'db.php'; // Подключаемся к базе данных
 
         $sql = "SELECT name, category, price, weight, description, image_url FROM dish";
         $result = $conn->query($sql);
@@ -447,8 +446,7 @@
         }
 
         $conn->close(); // Закрываем соединение с базой данных
-        ?> -->
-			</div>
+        ?>
 			</div>
 		</main>
 		<footer>
