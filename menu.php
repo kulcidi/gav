@@ -419,7 +419,7 @@
 				</div>
 				<div class="left">
 					 <?php
-        <!-- include 'db.php'; // Подключаемся к базе данных
+        include 'db.php'; // Подключаемся к базе данных
 
         $sql = "SELECT name, category, price, weight, description, image_url FROM dish";
         $result = $conn->query($sql);
@@ -447,8 +447,8 @@
         }
 
         $conn->close(); // Закрываем соединение с базой данных
-        ?> -->
-			</div>
+        ?>
+				</div>
 			</div>
 		</main>
 		<footer>

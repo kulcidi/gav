@@ -1,5 +1,117 @@
-/* .catalogue-main {
+.catalogue {
+   display: grid;
+   grid-template-columns: 1fr 4fr;
+   gap: 10px;
+}
+
+#weight {
+   margin-block-start: 2em;
+   margin-block-end: 0em;
+}
+
+
+.left {
+   gap: 15px;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   top: 0;
+   align-self: start;
+   padding: 10px;
+   text-align: left;
+   box-sizing: border-box;
+}
+
+.catalogue .column {
+   border-radius: 10px;
+   height: auto;
+   background-color: #f4f4f4;
+   padding: 10px;
+   box-sizing: border-box;
+}
+
+.catalogue .column .content {
+   text-align: left;
    display: flex;
+   flex-direction: column;
+   height: 100%;
+   justify-content: space-between;
+}
+
+
+@media (max-width: 900px) {
+   .catalogue-main1 {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+}
+
+@media (max-width: 600px) {
+   .catalogue-main1 {
+      grid-template-columns: 1fr 1fr;
+   }
+}
+
+:hover span,
+input {
+   cursor: pointer;
+}
+
+label {
+   font-family: boba;
+   font-size: calc(14px + 3 * (100vw / 1280));
+   font-weight: 600;
+}
+
+#static {
+   background-color: rgba(0, 255, 255, 0);
+}
+
+.checkbox *,
+.checkbox::after,
+.checkbox::before {
+   box-sizing: border-box;
+}
+
+.checkbox {
+   position: relative;
+   display: block;
+   overflow: hidden;
+}
+
+.checkbox .check {
+   width: 50px;
+   height: 50px;
+   position: absolute;
+   opacity: 0;
+}
+
+.checkbox .label svg {
+   vertical-align: middle;
+}
+
+.checkbox .path1 {
+   stroke-dasharray: 400;
+   stroke-dashoffset: 400;
+   transition: .4s all;
+}
+
+.checkbox .check:checked+label svg g path {
+   stroke-dashoffset: 0;
+}
+
+.checkbox .label {
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+}
+
+.checkbox .label span {
+   margin-left: 10px;
+   color: #000;
+}
+
+.catalogue-main1 {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
    gap: 10px;
    padding: 10px;
 }
@@ -9,20 +121,18 @@
    margin-block-end: 0em;
 }
 
-.right {
-   gap: 10px;
-   padding: 10px;
+.catalogue-main1 .static {
    position: sticky;
-   grid-template-columns: 1fr;
-}
-
-.left {
-   grid-template-columns: 1fr 1fr 1fr 1fr;
-   gap: 10px;
+   top: 0;
+   align-self: start;
+   height: 100vh;
+   background-color: #f4f4f4;
    padding: 10px;
+   text-align: left;
+   box-sizing: border-box;
 }
 
-/* .catalogue-main .left .column {
+.catalogue-main1 .column {
    border-radius: 10px;
    height: auto;
    background-color: #f4f4f4;
@@ -30,82 +140,23 @@
    box-sizing: border-box;
 }
 
-.catalogue-main .left .column .content {
+.buka {
+   display: none;
+}
+
+.catalogue-main1 .column .content {
    text-align: left;
    display: flex;
    flex-direction: column;
    height: 100%;
    justify-content: space-between;
-} */
+}
 
-/* @media (max-width: 1200px) {
+@media (max-width: 1200px) {
    .catalogue-main1 {
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      /* На более узких экранах 
    }
-}
 
-@media (max-width: 900px) {}
-
-@media (max-width: 600px) {}
-
-:hover span,
-input {
-   cursor: pointer;
-}
-
-label {
-   font-family: boba;
-   font-size: calc(14px + 3 * (100vw / 1280));
-   font-weight: 600;
-}
-
-.checkbox *,
-.checkbox::after,
-.checkbox::before {
-   box-sizing: border-box;
-}
-
-.checkbox {
-   position: relative;
-   display: block;
-   overflow: hidden;
-}
-
-.checkbox .check {
-   width: 50px;
-   height: 50px;
-   position: absolute;
-   opacity: 0;
-}
-
-.checkbox .label svg {
-   vertical-align: middle;
-}
-
-.checkbox .path1 {
-   stroke-dasharray: 400;
-   stroke-dashoffset: 400;
-   transition: .4s all;
-}
-
-.checkbox .check:checked+label svg g path {
-   stroke-dashoffset: 0;
-}
-
-.checkbox .label {
-   display: flex;
-   align-items: center;
-   cursor: pointer;
-}
-
-.checkbox .label span {
-   margin-left: 10px;
-   color: #000;
-}
-
-.buka {
-   display: none;
 }
 
 @media (max-width: 1100px) {
@@ -123,154 +174,41 @@ label {
       width: 100%;
    }
 
-
-   label {
-      font-family: boba;
-      font-size: calc(16px + 3 * (100vw / 1280));
-      font-weight: 600;
+   .catalogue-main1 {
+      grid-template-columns: 1fr 1fr 1fr;
    }
 
-
-   #imagef {
-      border-radius: 15px;
-      width: 100%;
-      height: 220px;
-      background-size: cover;
-   } */
-
-.catalogue {
-   display: flex;
-   gap: 10px;
-   padding: 10px;
-}
-
-#weight {
-   margin-block-start: 2em;
-   margin-block-end: 0em;
-}
-
-.right,
-.left {
-   gap: 10px;
-   padding: 10px;
-}
-
-.right {
-   position: sticky;
-}
-
-.left {
-   display: grid;
-}
-
-.column {
-   border-radius: 10px;
-   height: auto;
-   background-color: #f4f4f4;
-   padding: 10px;
-   text-align: center;
-   box-sizing: border-box;
-}
-
-.content {
-   /* gap: 5px; */
-   text-align: left;
-   display: flex;
-   flex-direction: column;
-   height: 100%;
-   /* Устанавливаем высоту .content равной высоте родителя */
-   justify-content: space-between;
-   /* Распределяем пространство между элементами */
-}
-
-@media (max-width: 1100px) {
-   .buka {
-      padding-top: 20px;
-      display: flex;
-      width: 100%;
-   }
-
-   .buka button {
-      border-radius: 40px;
-      border: 3.5px solid #0000005f;
-      color: #000000;
-      background-color: rgba(0, 255, 255, 0);
-      width: 100%;
-   }
-
-   label {
-      font-family: boba;
-      font-size: calc(16px + 3 * (100vw / 1280));
-      font-weight: 600;
-   }
-
-   #imagef {
-      border-radius: 15px;
-      width: 100%;
-      height: 220px;
-      background-size: cover;
+   #static {
+      display: none;
    }
 }
 
-@media (max-width: 900px) {}
+@media (max-width: 800px) {
+   .catalogue-main1 {
+      grid-template-columns: 1fr 1fr;
+   }
 
-@media (max-width: 600px) {}
+}
 
-:hover span,
-input {
-   cursor: pointer;
+@media (max-width: 550px) {
+   .catalogue-main1 {
+      grid-template-columns: 1fr;
+   }
+
 }
 
 label {
    font-family: boba;
-   font-size: calc(14px + 3 * (100vw / 1280));
+   font-size: calc(16px + 3 * (100vw / 1280));
    font-weight: 600;
 }
 
-.checkbox *,
-.checkbox::after,
-.checkbox::before {
-   box-sizing: border-box;
+
+#imagef {
+   border-radius: 15px;
+   width: 100%;
+   height: 220px;
+   background-size: cover;
 }
 
-.checkbox {
-   position: relative;
-   display: block;
-   overflow: hidden;
-}
-
-.checkbox .check {
-   width: 50px;
-   height: 50px;
-   position: absolute;
-   opacity: 0;
-}
-
-.checkbox .label svg {
-   vertical-align: middle;
-}
-
-.checkbox .path1 {
-   stroke-dasharray: 400;
-   stroke-dashoffset: 400;
-   transition: .4s all;
-}
-
-.checkbox .check:checked+label svg g path {
-   stroke-dashoffset: 0;
-}
-
-.checkbox .label {
-   display: flex;
-   align-items: center;
-   cursor: pointer;
-}
-
-.checkbox .label span {
-   margin-left: 10px;
-   color: #000;
-}
-
-.buka {
-   display: none;
-}
+@media (max-width: 1100px) {}
