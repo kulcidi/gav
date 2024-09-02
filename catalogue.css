@@ -4,11 +4,18 @@
    gap: 10px;
 }
 
+.buka {
+   display: none;
+}
+
 #weight {
    margin-block-start: 2em;
    margin-block-end: 0em;
 }
 
+.right {
+   display: block;
+}
 
 .left {
    gap: 15px;
@@ -38,16 +45,146 @@
 }
 
 
-@media (max-width: 900px) {
-   .catalogue-main1 {
+@media (max-width: 1466px) {
+   .right {
+      display: none;
+   }
+
+   .catalogue {
+      display: block;
+      gap: 10px;
+   }
+
+   .buka {
+      padding-top: 20px;
+      display: flex;
+      width: 100%;
+   }
+
+   .buka button {
+      border-radius: 40px;
+      border: 3.5px solid #0000005f;
+      color: #000000;
+      background-color: rgba(0, 255, 255, 0);
+      width: 100%;
+   }
+
+}
+
+@media (max-width: 1050px) {
+
+   .right {
+      display: none;
+   }
+
+   .left {
+      gap: 15px;
+      display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      top: 0;
+      align-self: start;
+      padding: 10px;
+      text-align: left;
+      box-sizing: border-box;
+   }
+
+   .catalogue {
+      display: block;
+      gap: 10px;
+   }
+
+   .buka {
+      padding-top: 20px;
+      display: flex;
+      width: 100%;
+   }
+
+   .buka button {
+      border-radius: 40px;
+      border: 3.5px solid #0000005f;
+      color: #000000;
+      background-color: rgba(0, 255, 255, 0);
+      width: 100%;
    }
 }
 
-@media (max-width: 600px) {
-   .catalogue-main1 {
-      grid-template-columns: 1fr 1fr;
+@media (max-width: 850px) {
+
+   .right {
+      display: none;
    }
+
+   .left {
+      gap: 15px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      top: 0;
+      align-self: start;
+      padding: 10px;
+      text-align: left;
+      box-sizing: border-box;
+   }
+#imagef {
+   border-radius: 15px;
+   width: 100%;
+   height: 330px;
+   background-size: cover;
+}
+   .catalogue {
+      display: block;
+      gap: 10px;
+   }
+
+   .buka {
+      padding-top: 20px;
+      display: flex;
+      width: 100%;
+   }
+
+   .buka button {
+      border-radius: 40px;
+      border: 3.5px solid #0000005f;
+      color: #000000;
+      background-color: rgba(0, 255, 255, 0);
+      width: 100%;
+   }
+}
+
+@media (max-width: 550px) {
+   .right {
+      display: none;
+   }
+
+   .left {
+      gap: 15px;
+      display: grid;
+      grid-template-columns: 1fr;
+      top: 0;
+      align-self: start;
+      padding: 10px;
+      text-align: left;
+      box-sizing: border-box;
+   }
+
+   .catalogue {
+      display: block;
+      gap: 10px;
+   }
+
+   .buka {
+      padding-top: 20px;
+      display: flex;
+      width: 100%;
+   }
+
+   .buka button {
+      border-radius: 40px;
+      border: 3.5px solid #0000005f;
+      color: #000000;
+      background-color: rgba(0, 255, 255, 0);
+      width: 100%;
+   }
+
 }
 
 :hover span,
@@ -109,17 +246,6 @@ label {
    color: #000;
 }
 
-.catalogue-main1 {
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-   gap: 10px;
-   padding: 10px;
-}
-
-#weight {
-   margin-block-start: 2em;
-   margin-block-end: 0em;
-}
 
 .catalogue-main1 .static {
    position: sticky;
@@ -140,9 +266,6 @@ label {
    box-sizing: border-box;
 }
 
-.buka {
-   display: none;
-}
 
 .catalogue-main1 .column .content {
    text-align: left;
@@ -152,50 +275,6 @@ label {
    justify-content: space-between;
 }
 
-@media (max-width: 1200px) {
-   .catalogue-main1 {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-   }
-
-}
-
-@media (max-width: 1100px) {
-   .buka {
-      padding-top: 20px;
-      display: flex;
-      width: 100%;
-   }
-
-   .buka button {
-      border-radius: 40px;
-      border: 3.5px solid #0000005f;
-      color: #000000;
-      background-color: rgba(0, 255, 255, 0);
-      width: 100%;
-   }
-
-   .catalogue-main1 {
-      grid-template-columns: 1fr 1fr 1fr;
-   }
-
-   #static {
-      display: none;
-   }
-}
-
-@media (max-width: 800px) {
-   .catalogue-main1 {
-      grid-template-columns: 1fr 1fr;
-   }
-
-}
-
-@media (max-width: 550px) {
-   .catalogue-main1 {
-      grid-template-columns: 1fr;
-   }
-
-}
 
 label {
    font-family: boba;
@@ -210,5 +289,3 @@ label {
    height: 220px;
    background-size: cover;
 }
-
-@media (max-width: 1100px) {}

@@ -93,10 +93,6 @@ document.querySelectorAll('#side-menu h2').forEach(function (element) {
 	})
 })
 
-// Функция для навигации по ссылкам
-function navigateTo(url) {
-	window.location.href = url
-}
 
 // Переход по клику на логотип
 document.getElementById('logo-small').addEventListener('click', function () {

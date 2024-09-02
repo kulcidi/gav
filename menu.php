@@ -45,11 +45,11 @@
 			</div>
 
 			<aside id="side-menu" class="menu">
-				<h2 data-url="menu.html">МЕНЮ</h2>
-				<h2 data-url="lunch.html">БИЗНЕС-ЛАНЧИ</h2>
+				<h2 data-url="menu.php">МЕНЮ</h2>
+				<h2 data-url="lunch.php">БИЗНЕС-ЛАНЧИ</h2>
 				<h2 data-url="delivery.html">ДОСТАВКА И ОПЛАТА</h2>
-				<h2 data-url="reviews.html">ОТЗЫВЫ</h2>
-				<h2 data-url="profile.html">ПРОФИЛЬ</h2>
+				<h2 data-url="reviews.php">ОТЗЫВЫ</h2>
+				<h2 data-url="profile.php">ПРОФИЛЬ</h2>
 			</aside>
 
 			<aside id="filterrSidebar" class="filterr">
