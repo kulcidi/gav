@@ -53,15 +53,15 @@
 			</aside>
 
 			<aside id="filterrSidebar" class="filterr">
-				<h2 data-index="set">СЕТЫ</h2>
-				<h2 data-index="hot">ГОРЯЧЕЕ</h2>
-				<h2 data-index="salad">САЛАТЫ</h2>
-				<h2 data-index="add">ГАРНИРЫ</h2>
-				<h2 data-index="lunch">БИЗНЕС-ЛАНЧИ</h2>
-				<h2 data-index="pie">ОСЕТИНСКИЕ ПИРОГИ</h2>
-				<h2 data-index="grill">ГРИЛЬ</h2>
-				<h2 data-index="kids">ДЛЯ ДЕТЕЙ</h2>
-				<h2 data-index="drink">НАПИТКИ</h2>
+				<h2 data-index="2">СЕТЫ</h2>
+				<h2 data-index="3">ГОРЯЧЕЕ</h2>
+				<h2 data-index="4">САЛАТЫ</h2>
+				<h2 data-index="6">ГАРНИРЫ</h2>
+				<h2 data-index="7">БИЗНЕС-ЛАНЧИ</h2>
+				<h2 data-index="9">ОСЕТИНСКИЕ ПИРОГИ</h2>
+				<h2 data-index="10">ГРИЛЬ</h2>
+				<h2 data-index="11">ДЛЯ ДЕТЕЙ</h2>
+				<h2 data-index="12">НАПИТКИ</h2>
 			</aside>
 
 			<div id="shorter"></div>
@@ -72,7 +72,7 @@
 				<div class="right" id="side">
 					<h2>китайская кухня</h2>
 					<div class="filter">
-						<div class="checkbox" data-index="set">
+						<div class="checkbox" data-index="1">
 							<input
 								type="checkbox"
 								id="check1"
@@ -106,7 +106,7 @@
 							</label>
 						</div>
 
-						<div class="checkbox" data-index="hot">
+						<div class="checkbox" data-index="2">
 							<input
 								type="checkbox"
 								id="check2"
@@ -140,7 +140,7 @@
 							</label>
 						</div>
 
-						<div class="checkbox" data-index="salad">
+						<div class="checkbox" data-index="3">
 							<input
 								type="checkbox"
 								id="check3"
@@ -174,7 +174,7 @@
 							</label>
 						</div>
 
-						<div class="checkbox" data-index="seafood">
+						<div class="checkbox" data-index="4">
 							<input
 								type="checkbox"
 								id="check4"
@@ -208,7 +208,7 @@
 							</label>
 						</div>
 
-						<div class="checkbox" data-index="add">
+						<div class="checkbox" data-index="5">
 							<input
 								type="checkbox"
 								id="check5"
@@ -242,7 +242,7 @@
 							</label>
 						</div>
 
-						<div class="checkbox" data-index="lunch">
+						<div class="checkbox" data-index="6">
 							<input
 								type="checkbox"
 								id="check6"
@@ -280,7 +280,7 @@
 					<h2>ПРОЧЕЕ</h2>
 
 					<div class="filter">
-						<div class="checkbox" data-index="pie">
+						<div class="checkbox" data-index="7">
 							<input
 								type="checkbox"
 								id="check7"
@@ -314,7 +314,7 @@
 							</label>
 						</div>
 
-						<div class="checkbox" data-index="grill">
+						<div class="checkbox" data-index="8">
 							<input
 								type="checkbox"
 								id="check8"
@@ -348,7 +348,7 @@
 							</label>
 						</div>
 
-						<div class="checkbox" data-index="kids">
+						<div class="checkbox" data-index="9">
 							<input
 								type="checkbox"
 								id="check9"
@@ -382,7 +382,7 @@
 							</label>
 						</div>
 
-						<div class="checkbox" data-index="drink">
+						<div class="checkbox" data-index="10">
 							<input
 								type="checkbox"
 								id="check10"
@@ -418,37 +418,36 @@
 					</div>
 				</div>
 				<div class="left">
-					<?php
-include 'db.php'; // Подключаемся к базе данных
+					 <?php
+        include 'db.php'; // Подключаемся к базе данных
 
-$sql = "SELECT name, category, price, weight, description, image_url FROM dish";
-$result = $conn->query($sql);
+        $sql = "SELECT name, category, price, weight, description, image_url FROM dish";
+        $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    // Для каждой записи создаем новый блок с классом 'column' и добавляем 'data-category'
-    while($row = $result->fetch_assoc()) {
-        echo "<div class='column' data-category='" . $row['category'] . "'>";
-        echo "<div class='content'>";
-        echo "<div class='image' id='imagef' style='background-image: url(" . $row['image_url'] . ");'></div>";
-        echo "<p id='name'>" . $row['name'] . "</p>";
-        echo "<h3 id='weight'>" . $row['weight'] . " гр</h3>";
-        echo "<h3 id='decribe'>" . $row['description'] . "</h3>";
-        echo "<div class='column_buy'>";
-        echo "<h4 id='coast'>" . $row['price'] . " ₽</h4>";
-        echo "<button id='basket' class='btn'>";
-        echo "<img id='normalbasker' src='./img/buy.svg' alt='Купить' />";
-        echo "</button>";
-        echo "</div>";
-        echo "</div>";
-        echo "</div>";
-    }
-} else {
-    echo "<p>Нет доступных данных</p>";
-}
+        if ($result->num_rows > 0) {
+            // Для каждой записи создаем новый блок с классом 'column'
+            while($row = $result->fetch_assoc()) {
+                echo "<div class='column'>";
+                echo "<div class='content'>";
+                echo "<div class='image' id='imagef' style='background-image: url(" . $row['image_url'] . ");'></div>";
+                echo "<p id='name'>" . $row['name'] . "</p>";
+                echo "<h3 id='weight'>" . $row['weight'] . " гр</h3>";
+                echo "<h3 id='decribe'>" . $row['description'] . "</h3>";
+                echo "<div class='column_buy'>";
+                echo "<h4 id='coast'>" . $row['price'] . " ₽</h4>";
+                echo "<button id='basket' class='btn'>";
+                echo "<img id='normalbasker' src='./img/buy.svg' alt='Купить' />";
+                echo "</button>";
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
+            }
+        } else {
+            echo "<p>Нет доступных данных</p>";
+        }
 
-$conn->close();
-?>
-
+        $conn->close(); // Закрываем соединение с базой данных
+        ?>
 				</div>
 			</div>
 		</main>
@@ -484,7 +483,6 @@ $conn->close();
 			</main>
 		</footer>
 	</body>
-	<script src="./script.js"></script>
 	<script>
 		document
 			.getElementById('filterrButton')
@@ -507,48 +505,5 @@ $conn->close();
 			}
 		})
 	</script>
-	<script>
-    // Функция фильтрации блюд
-    function filterDishes() {
-        const checkboxes = document.querySelectorAll('.filter .checkbox input[type="checkbox"]');
-        const columns = document.querySelectorAll('.left .column');
-
-        // Получаем все выбранные категории
-        let selectedCategories = [];
-        checkboxes.forEach(checkbox => {
-            if (checkbox.checked) {
-                // Привязка категории к data-index чекбокса
-                const category = checkbox.parentElement.getAttribute('data-index');
-                selectedCategories.push(category);
-            }
-        });
-
-        // Если нет выбранных категорий, показываем все блюда
-        if (selectedCategories.length === 0) {
-            columns.forEach(column => {
-                column.style.display = 'block';
-            });
-            return;
-        }
-
-        // Фильтруем блюда на основе выбранных категорий
-        columns.forEach(column => {
-            const category = column.getAttribute('data-category');
-            if (selectedCategories.includes(category)) {
-                column.style.display = 'block';
-            } else {
-                column.style.display = 'none';
-            }
-        });
-    }
-
-    // Навешиваем событие на каждый чекбокс
-    document.querySelectorAll('.filter .checkbox input[type="checkbox"]').forEach(checkbox => {
-        checkbox.addEventListener('change', filterDishes);
-    });
-
-    // Вызываем фильтрацию при загрузке страницы
-    window.addEventListener('load', filterDishes);
-</script>
-
+	<script src="./script.js"></script>
 </html>
