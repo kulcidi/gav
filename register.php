@@ -43,8 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <main>
         <img id="background" src="./img/texture.png" />
         <section class="window">
-            <h1>РЕГИСТРАЦИЯ</h1>
-
+            <h1>РЕГИСТРАЦИЯ</h1> 
             <?php if (!empty($error_message)): ?>
                 <p style="color: red;"><?php echo $error_message; ?></p>
             <?php endif; ?>
@@ -52,6 +51,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php if (!empty($success_message)): ?>
                 <p style="color: green;"><?php echo $success_message; ?></p>
             <?php endif; ?>
+            <div class="offer">
+                <h2>Уже есть аккаунт?</h2>
+                <a id="sus" href="login.php"><h2>Войти</h2></a>
+            </div>
+
+           
 
             <form method="POST" action="register.php">
                 <input type="text" name="username" placeholder="Имя пользователя" required /><br />
