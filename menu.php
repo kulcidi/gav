@@ -452,7 +452,7 @@ $conn->close();
 				</div>
 			</div>
 		</main>
-		<footer>
+		<footer style="margin-top: 50px">
 			<main>
 				<div class="column">
 					<img src="./img/LOGO.png" alt="" />
@@ -484,6 +484,7 @@ $conn->close();
 			</main>
 		</footer>
 	</body>
+
 	<script src="./script.js"></script>
 	<script>
 		document

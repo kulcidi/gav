@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Жемчужина Востока</title>
 		<link rel="shortcut icon" href="./img/tab.ico" />
 		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="./slider.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css" />
 	</head>
 	<body>
 		<img id="background" src="./img/texture.png" />
@@ -29,7 +33,15 @@
 					</nav>
 					<nav id="header1-nav2">
 						<button>
-							<img id="profile-icon1" src="./svg/profile.svg" alt="Profile" />
+							<?php if (isset($_SESSION['user_id'])): ?>
+							<a href="profile.php"
+								><img id="profile-icon1" src="./svg/profile.svg" alt="Profile"
+							/></a>
+							<?php else: ?>
+							<a href="login.php"
+								><img id="profile-icon1" src="./svg/profile.svg" alt="Profile"
+							/></a>
+							<?php endif; ?>
 						</button>
 					</nav>
 				</div>
@@ -50,11 +62,32 @@
 				<h2 data-url="reviews.php">ОТЗЫВЫ</h2>
 				<h2 data-url="profile.php">ПРОФИЛЬ</h2>
 			</aside>
-
-			<div id="shorter"></div>
-         
 		</main>
-		<footer>
+		<main>
+			<div id="shorter"><h1 style="padding-bottom: 30px;">ОТЗЫВЫ</h1></div>		</main>
+			<section
+				id="splide"
+				class="splide"
+				aria-label="Splide Basic HTML Example">
+				<div class="splide__track">
+					<ul class="splide__list"">
+						<li class="splide__slide">
+							<img src="./img/reward/4.jpg" alt="" style="filter: sepia(30%)"/>
+						</li>
+						<li class="splide__slide">
+							<img src="./img/reward/3.jpg" alt="" style="filter: sepia(30%)"/>
+						</li>
+						<li class="splide__slide">
+							<img src="./img/reward/2.jpg" alt="" style="filter: sepia(30%)"/>
+						</li>
+						<li class="splide__slide">
+							<img src="./img/reward/1.jpg" alt="" style="filter: sepia(30%)"/>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+		<footer style="margin-top: 100px">
 			<main>
 				<div class="column">
 					<img src="./img/LOGO.png" alt="" />
@@ -86,5 +119,18 @@
 			</main>
 		</footer>
 	</body>
+	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+	<script>
+		const splide = new Splide('.splide', {
+			type: 'loop',
+			autoplay: true,
+			interval: 3000, // Интервал между слайдами (в миллисекундах)
+			pauseOnHover: false, // Отключение паузы при наведении мыши
+			resetProgress: false, // Сбросить таймер, когда пользователь взаимодействует с слайдером
+			speed: 300,
+		})
+
+		splide.mount()
+	</script>
 	<script src="./script.js"></script>
 </html>

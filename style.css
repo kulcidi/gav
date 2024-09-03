@@ -66,7 +66,12 @@ a {
 	margin: 0 auto;
 	/* Центрирует изображение по горизонтали */
 }
-
+.deliv-grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+		gap: 10px;
+	
+}
 p {
 	text-transform: uppercase;
 	font-family: 'boba';
@@ -246,7 +251,21 @@ body::-webkit-scrollbar {
 	text-decoration: none;
 	cursor: pointer;
 }
-
+.heho{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+.bub{
+	width: 500px;
+	border-color: #00000062;
+	border-radius: 35px;
+	background-color: #00000000;
+	border-width: 3px;
+	border-style: solid;
+	text-align: center;
+	align-items: center;
+}
 #header1-nav1 h3::after,
 #header1-nav2 h3::after {
 	content: '';
@@ -280,7 +299,9 @@ footer h3,
 button {
 	cursor: pointer;
 }
-
+.deliv_info{
+	padding-left: 20px;
+}
 footer {
 	background: url('./img/backie.png');
 	width: 100%;
@@ -415,9 +436,9 @@ footer main .column {
 		background: url(./img/sets/harbin.png);
 		background-size: cover;
 	}
-.btn{
+/* .btn{
 	background-color: #9b9b9b;
-}
+} */
 	#image2 {
 		border-radius: 15px;
 		width: 100%;
